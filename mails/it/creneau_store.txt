@@ -1,0 +1,23 @@
+{shop_url}
+
+Buongiorno {firstname} {lastname},
+
+Si prega di presentare questa e-mail per il ritiro dell’ordine.
+
+Punto di ritiro:
+{store_name}
+{store_address}
+{store_postcode} {store_city}
+{store_tel}
+
+Ordine n°: {order_ref}
+
+Data dell’ordine: {order_date}
+
+Troverai queste informazioni sul nostro sito, nella sezione [Order history]({history_url}) del tuo conto cliente.
+
+Se possiedi un conto ospite, puoi rintracciare il tuo ordine nella sezione [Guest Tracking] ({guest_tracking_url}) del nostro negozio online.
+
+[{shop_name}]({shop_url})
+
+Powered by [PrestaShop](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail=utm_campaign=footer_1-7)

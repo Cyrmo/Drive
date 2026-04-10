@@ -1,0 +1,15 @@
+{shop_url}
+
+Boenos dias {firstname} {lastname},
+
+Información sobre el retiro de su pedido:
+
+Punto de retiro:
+{store_name}
+{store_address}
+{store_postcode} {store_city}
+{store_tel}
+
+Pedir Referencia: {order_ref}
+
+Fecha del pedido: {order_date}

@@ -1,0 +1,23 @@
+{shop_url}
+
+Bonjour {firstname} {lastname},
+
+Veuillez présenter cet email lors du retrait de votre commande.
+
+Point de retrait :
+{store_name}
+{store_address}
+{store_postcode} {store_city}
+{store_tel}
+
+Référence de commande : {order_ref}
+
+Date de commande : {order_date}
+
+Vous retrouverez également ces informations sur notre site, dans la section [Historique et détails de mes commandes]({history_url}) de votre compte client.
+
+Si vous avez un compte invité, vous pouvez suivre votre commande via la section [Suivi invité]({guest_tracking_url}) sur notre boutique.
+
+[{shop_name}]({shop_url})
+
+Powered by [PrestaShop](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail=utm_campaign=footer_1-7)

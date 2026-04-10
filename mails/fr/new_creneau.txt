@@ -1,0 +1,25 @@
+{shop_url}
+
+Bonjour,
+
+Informations concernant le retrait de la commande.
+
+Créneau de retrait : {msg_creneau}
+
+Point de retrait :
+{store_name}
+{store_address}
+{store_postcode} {store_city}
+{store_tel}
+
+Reference : {order_ref}
+
+Date : {order_date}
+
+Message : {message}
+
+Produits : {products}
+
+[{shop_name}]({shop_url})
+
+Powered by [PrestaShop](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail=utm_campaign=footer_1-7)

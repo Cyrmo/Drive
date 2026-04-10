@@ -1,0 +1,25 @@
+{shop_url}
+
+Hello {firstname} {lastname},
+
+Informationen zum Abholung Ihrer Bestellung :
+
+Bitte zeigen Sie diese E-Mail, wenn Sie Ihre Bestellung abholen.
+
+AbholGeschäft:
+{store_name}
+{store_address}
+{store_postcode} {store_city}
+{store_tel}
+
+Bestellreferenz: {order_ref}
+
+Bestelldatum: {order_date}
+
+Sie erhalten alle diese Informationen in unserem Shop im Abschnitt [Bestellverlauf] Bestellverlauf auf unserem Shop ({history_url}) auf unserem Shop.
+
+Wenn Sie ein Gastkonto haben, können Sie Ihre Bestellung über die verfolgen [Gäste-Tracking] ({guest_tracking_url}) Abschnitt auf unserem Shop.
+
+[{shop_name}]({shop_url})
+
+Powered by [PrestaShop](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail=utm_campaign=footer_1-7)

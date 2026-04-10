@@ -1,0 +1,21 @@
+{shop_url}
+
+Hallo,
+
+Informationen zum Abholung Ihrer Bestellung:
+
+Pickup-Slot : {msg_creneau}
+
+AbholGeschäft:
+{store_name}
+{store_address}
+{store_postcode} {store_city}
+{store_tel}
+
+Bestellreferenz: {order_ref}
+
+Bestelldatum: {order_date}
+
+[{shop_name}]({shop_url})
+
+Powered by [PrestaShop](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail=utm_campaign=footer_1-7)

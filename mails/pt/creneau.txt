@@ -1,0 +1,23 @@
+{shop_url}
+
+Caro(a) {firstname} {lastname},Informações sobre a sua recolha :
+
+Levantamento : {msg_creneau}
+Por favor, mostre este email no momento da entrega.
+Loja de recolha :
+{store_name}
+{store_address}
+{store_postcode} {store_city}
+{store_tel}
+
+Nº Encomenda : {order_ref}
+
+Data da encomenda : {order_date}
+
+Acompanhe a sua encomenda na nossa loja, consulte [ histórico e detalhes de encomendas]({history_url}) na sua área de cliente.
+
+Se tem uma encomenda sem registo cliente, pode seguir o seu pedido como [visitante] ({guest_tracking_url}) na nossa loja.
+
+[{shop_name}]({shop_url})
+
+Powered by [PrestaShop](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail=utm_campaign=footer_1-7)
