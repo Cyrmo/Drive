@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>prestatilldrive</name>
+	<displayName><![CDATA[Drive, Click and Collect pour Prestashop]]></displayName>
+	<version><![CDATA[2.2.0]]></version>
+	<description><![CDATA[Vous proposez le retrait en magasin ? Proposez &agrave; vos clients de choisir le magasin, le jour et le cr&eacute;neau horaire du retrait de leur commande, &agrave; travers une interface optimis&eacute;e.]]></description>
+	<author><![CDATA[Prestatill]]></author>
+	<tab><![CDATA[administration]]></tab>
+	<confirmUninstall><![CDATA[Souhaitez-vous réellement désinstaller le module ?]]></confirmUninstall>
+	<is_configurable>1</is_configurable>
+	<need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>

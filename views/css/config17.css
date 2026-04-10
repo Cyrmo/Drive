@@ -1,0 +1,10 @@
+.order_creneau_edit .col177 {
+	flex: inherit;
+    float: left;
+    display: inline-block;
+    padding: 5px;
+}
+
+.order_creneau_edit .clearfix {
+	clear:both;
+}
