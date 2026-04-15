@@ -1,0 +1,20 @@
+{
+    "name": "digitalfoodsystem/dfs_clickcollect",
+    "description": "Click and Collect module for Prestashop 9",
+    "license": "AFL-3.0",
+    "authors": [
+        {
+            "name": "Cyrille Mohr - Digital Food System",
+            "email": "cyrille.mohr@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DigitalFoodSystem\\DfsClickCollect\\": "src/"
+        }
+    },
+    "config": {
+        "prepend-autoloader": false
+    },
+    "type": "prestashop-module"
+}
