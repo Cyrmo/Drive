@@ -31,6 +31,8 @@ class Dfs_ClickcollectAjaxModuleFrontController extends ModuleFrontController
             $dates = [];
             $currentDate = new \DateTime();
             
+            $daysFr = [1 => 'Lundi', 2 => 'Mardi', 3 => 'Mercredi', 4 => 'Jeudi', 5 => 'Vendredi', 6 => 'Samedi', 7 => 'Dimanche'];
+            
             for ($i = 0; $i < 30; $i++) {
                 $checkDate = clone $currentDate;
                 $checkDate->modify("+$i days");
@@ -42,7 +44,8 @@ class Dfs_ClickcollectAjaxModuleFrontController extends ModuleFrontController
                 if (!empty($slots)) {
                     $dates[] = [
                         'value' => $dayString,
-                        'label' => $checkDate->format('d/m/Y')
+                        'label' => $checkDate->format('d/m/Y'),
+                        'dayName' => isset($daysFr[$id_day]) ? $daysFr[$id_day] : ''
                     ];
                 }
             }

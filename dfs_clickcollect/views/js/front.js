@@ -173,7 +173,8 @@ $(document).ready(function() {
                     }
                     var html = '';
                     $.each(res.dates, function(i, date) {
-                        html += '<div class="dfs-date-btn" data-date="'+date.value+'" style="cursor:pointer; display:inline-block; padding:12px 20px; margin-right:10px; background:#f8f9fa; border:1px solid #ddd; border-radius:6px; font-weight:bold; color:#555; transition:0.2s;">' + date.label + '</div>';
+                        var dayMarkup = date.dayName ? '<div style="font-size:0.85em; font-weight:normal; margin-bottom:3px; opacity:0.8; text-transform:capitalize;">' + date.dayName + '</div>' : '';
+                        html += '<div class="dfs-date-btn" data-date="'+date.value+'" style="cursor:pointer; display:inline-block; padding:10px 15px; margin-right:10px; margin-bottom:10px; background:#f8f9fa; border:1px solid #ddd; border-radius:8px; color:#555; transition:all 0.2s ease; text-align:center; vertical-align:top; min-width:90px;">' + dayMarkup + '<div style="font-weight:bold; font-size:1.05em;">' + date.label + '</div></div>';
                     });
                     container.find('.dfs_date_scroll').html(html);
                 } else {
