@@ -48,7 +48,7 @@ class Dfs_Clickcollect extends Module
             && $this->registerHook('actionOrderGridDefinitionModifier')
             && $this->registerHook('actionOrderGridQueryBuilderModifier')
             && $this->registerHook('sendMailAlterTemplateVars')
-            && $this->_installTab('ShopParameters', 'AdminDfsClickCollect', $this->l('Click & Collect'));
+            && $this->_installTab('AdminParentPreferences', 'AdminDfsClickCollect', $this->l('Click & Collect'));
     }
 
     public function uninstall()
