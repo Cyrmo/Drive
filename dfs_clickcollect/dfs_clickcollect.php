@@ -232,7 +232,7 @@ class Dfs_Clickcollect extends Module
         }
     }
 
-    public function hookSendMailAlterTemplateVars($params)
+    public function hookSendMailAlterTemplateVars(&$params)
     {
         $id_order = 0;
         if (isset($params['template_vars']['{id_order}'])) {
