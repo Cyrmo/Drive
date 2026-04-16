@@ -287,7 +287,14 @@ class Dfs_Clickcollect extends Module
             </tr>
         </table>';
 
-        if (isset($params['template_vars']['{delivery_block_html}'])) {
+        // We inject after invoice_block_html to break out of the 2-column layout (50/50).
+        // By closing the td/tr/table, we can then display our 100% width block, 
+        // and open a hidden table to gracefully swallow the template's remaining closing tags.
+        $breaker_html = '</td></tr></table><br/>' . $drive_html . '<table style="display:none;"><tr><td>';
+
+        if (isset($params['template_vars']['{invoice_block_html}'])) {
+            $params['template_vars']['{invoice_block_html}'] .= $breaker_html;
+        } elseif (isset($params['template_vars']['{delivery_block_html}'])) {
             $params['template_vars']['{delivery_block_html}'] .= $drive_html;
         }
         if (isset($params['template_vars']['{bankwire_owner}'])) {
