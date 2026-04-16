@@ -321,7 +321,7 @@ class Dfs_Clickcollect extends Module
         return $this->hookDisplayAdminOrderMainBottom($params);
     }
 
-    public function hookDisplayInvoiceLegalFreeText($params) 
+    public function hookDisplayPDFInvoice($params) 
     {
         $id_order = isset($params['order']->id) ? (int)$params['order']->id : 0;
         if (!$id_order) {
@@ -346,10 +346,5 @@ class Dfs_Clickcollect extends Module
             ]
         ]);
         return $this->display(__FILE__, 'views/templates/hook/displayPDFInvoice.tpl');
-    }
-    
-    public function hookDisplayPDFInvoice($params)
-    {
-        return $this->hookDisplayInvoiceLegalFreeText($params);
     }
 }
