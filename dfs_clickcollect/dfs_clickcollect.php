@@ -44,7 +44,7 @@ class Dfs_Clickcollect extends Module
             && $this->registerHook('actionOrderStatusPostUpdate')
             && $this->registerHook('displayAdminOrderTabContent')
             && $this->registerHook('displayAdminOrderContentShip')
-            && $this->registerHook('displayAdminOrderMain')
+            && $this->registerHook('displayAdminOrderMainBottom')
             && $this->registerHook('displayInvoiceLegalFreeText')
             && $this->registerHook('displayPDFInvoice')
             && $this->registerHook('actionOrderGridDefinitionModifier')
@@ -261,7 +261,7 @@ class Dfs_Clickcollect extends Module
              return;
         }
 
-        $store = new Store($selection['id_store']);
+        $store = new Store((int)$selection['id_store'], (int)$this->context->language->id);
         if (!Validate::isLoadedObject($store)) {
             return;
         }
@@ -288,7 +288,7 @@ class Dfs_Clickcollect extends Module
         }
     }
 
-    public function hookDisplayAdminOrderMain($params)
+    public function hookDisplayAdminOrderMainBottom($params)
     {
         $id_order = (int) $params['id_order'];
         $selection = Db::getInstance()->getRow('SELECT * FROM `' . _DB_PREFIX_ . 'dfs_clickcollect_creneau` WHERE `id_order` = ' . $id_order);
@@ -318,7 +318,7 @@ class Dfs_Clickcollect extends Module
     public function hookDisplayAdminOrderContentShip($params)
     {
         // Retro-compat PS 1.7.6+
-        return $this->hookDisplayAdminOrderMain($params);
+        return $this->hookDisplayAdminOrderMainBottom($params);
     }
 
     public function hookDisplayInvoiceLegalFreeText($params) 
@@ -335,14 +335,15 @@ class Dfs_Clickcollect extends Module
         $selection = Db::getInstance()->getRow('SELECT * FROM `' . _DB_PREFIX_ . 'dfs_clickcollect_creneau` WHERE `id_order` = ' . $id_order);
         if (!$selection) return '';
         
-        $store = new Store((int)$selection['id_store']);
+        $store = new Store((int)$selection['id_store'], (int)$this->context->language->id);
         $day_formatted = date('d/m/Y', strtotime($selection['day']));
 
         $this->context->smarty->assign([
-            'dfs_store_name' => $store->name,
-            'dfs_store_address' => $store->address1 . ', ' . $store->city,
-            'dfs_date' => $day_formatted,
-            'dfs_hour' => $selection['hour']
+            'dfs_slot' => [
+                'store_name' => $store->name,
+                'day' => $day_formatted,
+                'hour' => $selection['hour']
+            ]
         ]);
         return $this->display(__FILE__, 'views/templates/hook/displayPDFInvoice.tpl');
     }
