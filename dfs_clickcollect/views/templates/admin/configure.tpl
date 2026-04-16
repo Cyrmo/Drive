@@ -11,9 +11,9 @@
         setTimeout(function() {
             var titleEl = document.querySelector('.page-title, .page-head h1.title');
             if (titleEl) {
-                titleEl.innerText = 'Click & Collect Configuration';
+                titleEl.textContent = 'Click & Collect Configuration';
             }
-        }, 50);
+        }, 100);
     });
 </script>
 
