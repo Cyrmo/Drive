@@ -269,13 +269,23 @@ class Dfs_Clickcollect extends Module
         $date_formatted = date('d/m/Y', strtotime($selection['day']));
         $time_formatted = $selection['hour'];
 
-        $drive_html = '<div style="margin-bottom: 20px; border: 1px solid #e6e6e6; padding: 15px;">';
-        $drive_html .= '<h3 style="margin-top: 0; color: #333333;">Détails de votre <span style="color:#2cb1c1;">Click & Collect</span></h3>';
-        $drive_html .= '<strong>Magasin: </strong> ' . $store->name . '<br />';
-        $drive_html .= '<strong>Adresse: </strong> ' . $store->address1 . ', ' . $store->city . '<br />';
-        $drive_html .= '<strong>Date de retrait: </strong> <span style="color:#2cb1c1; font-weight:bold;">' . $date_formatted . '</span><br />';
-        $drive_html .= '<strong>Heure: </strong> <span style="color:#2cb1c1; font-weight:bold;">' . $time_formatted . '</span>';
-        $drive_html .= '</div>';
+        $drive_html = '
+        <table style="width: 100%; border: 1px solid #e6e6e6; padding: 5px; margin-top: 10px; background-color: #f9f9f9;">
+            <tr>
+                <td style="text-align: center; font-weight: bold; background-color: #2cb1c1; color: white; padding: 8px; font-size: 11pt; text-transform: uppercase;">
+                    ' . $this->l('DÉTAILS RETRAIT EN MAGASIN (CLICK & COLLECT)') . '
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; padding: 15px; font-size: 10pt; color: #333;">
+                    <br>
+                    <span style="font-size: 11pt;">' . $this->l('BOUTIQUE :') . ' <strong>' . $store->name . '</strong></span><br><br>
+                    <span style="font-size: 11pt;">' . $this->l('DATE :') . ' <strong>' . $date_formatted . '</strong></span><br><br>
+                    <span style="font-size: 11pt;">' . $this->l('CRÉNEAU :') . ' <strong>' . $time_formatted . '</strong></span>
+                    <br><br>
+                </td>
+            </tr>
+        </table>';
 
         if (isset($params['template_vars']['{delivery_block_html}'])) {
             $params['template_vars']['{delivery_block_html}'] .= $drive_html;
