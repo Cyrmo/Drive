@@ -270,27 +270,23 @@ class Dfs_Clickcollect extends Module
         $time_formatted = $selection['hour'];
 
         $drive_html = '
-        <table style="width: 100%; border: 1px solid #e6e6e6; padding: 5px; margin-top: 10px; background-color: #f9f9f9;">
+        <table style="width: 100%; margin-top: 15px; background-color: #f9f9f9; border-collapse: collapse;">
             <tr>
-                <td style="text-align: center; font-weight: bold; background-color: #2cb1c1; color: white; padding: 8px; font-size: 11pt; text-transform: uppercase;">
+                <td style="text-align: center; font-weight: bold; background-color: #2cb1c1; color: #ffffff; padding: 12px; font-size: 11pt;">
                     ' . $this->l('DÉTAILS RETRAIT EN MAGASIN (CLICK & COLLECT)') . '
                 </td>
             </tr>
             <tr>
-                <td style="text-align: center; padding: 15px; font-size: 10pt; color: #333;">
-                    <br>
-                    <span style="font-size: 11pt;">' . $this->l('BOUTIQUE :') . ' <strong>' . $store->name . '</strong></span><br><br>
-                    <span style="font-size: 11pt;">' . $this->l('DATE :') . ' <strong>' . $date_formatted . '</strong></span><br><br>
-                    <span style="font-size: 11pt;">' . $this->l('CRÉNEAU :') . ' <strong>' . $time_formatted . '</strong></span>
-                    <br><br>
+                <td style="text-align: center; padding: 25px 15px; font-size: 10.5pt; color: #555454; line-height: 2;">
+                    BOUTIQUE : <strong style="color: #333333;">' . $store->name . '</strong><br>
+                    DATE : <strong style="color: #333333;">' . $date_formatted . '</strong><br>
+                    CRÉNEAU : <strong style="color: #333333;">' . $time_formatted . '</strong>
                 </td>
             </tr>
         </table>';
 
-        // We inject after invoice_block_html to break out of the 2-column layout (50/50).
-        // By closing the td/tr/table, we can then display our 100% width block, 
-        // and open a hidden table to gracefully swallow the template's remaining closing tags.
-        $breaker_html = '</td></tr></table><br/>' . $drive_html . '<table style="display:none;"><tr><td>';
+        // Integrate seamlessly into the 5-column structure of the PrestaShop order_conf.html address table
+        $breaker_html = '</font></td><td width="10"></td></tr><tr><td colspan="5" style="padding:0 10px 10px 10px;">' . $drive_html . '</td></tr><tr style="display:none;"><td><font>';
 
         if (isset($params['template_vars']['{invoice_block_html}'])) {
             $params['template_vars']['{invoice_block_html}'] .= $breaker_html;
